@@ -1,0 +1,134 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.base", "game4automation.base.csproj", "{079598CF-5185-619E-199D-9A9FF02E5571}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.opocua", "game4automation.interfaces.opocua.csproj", "{3EE3ECB6-AD17-6056-666F-B0465C58E439}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Core", "NaughtyAttributes.Core.csproj", "{80850CA6-47D4-F9D9-1404-E46DA4B0091D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.cadlink", "game4automation.cadlink.csproj", "{ECE67548-51DD-2B1A-B2A1-D1820A6F1F13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.plcsimadvanced", "game4automation.interfaces.plcsimadvanced.csproj", "{6E5BD508-44B6-244A-FB18-98A50CCE2A33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.parts4cad", "game4automation.parts4cad.csproj", "{C262968F-FA0A-DCC9-A452-0719D852DE2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{0A7F088E-6B8A-A9B0-5144-3814DD050EF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.spacenavigator", "game4automation.spacenavigator.csproj", "{7264D815-B846-2A8E-3B3C-DCBD9D3A839F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.s7tcpip", "game4automation.interfaces.s7tcpip.csproj", "{F6C1C970-7DD8-17DA-BA09-7BD74779EABF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.twincatads", "game4automation.interfaces.twincatads.csproj", "{9F48501D-BFEA-8B57-E4C3-182B3A8C7DAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.sharedmemory", "game4automation.interfaces.sharedmemory.csproj", "{188DB21F-A75C-79B7-AD98-B3A04EA14B24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.productivetools.editor", "game4automation.productivetools.editor.csproj", "{96F554B7-E54C-137B-1E69-70F86E851239}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Editor", "NaughtyAttributes.Editor.csproj", "{2BB00F39-88DE-C121-32E9-0074B8364C1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.editor", "game4automation.editor.csproj", "{BB53ED43-5E42-B6C8-5421-0B4B87E699C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.parts4cad.editor", "game4automation.parts4cad.editor.csproj", "{30A5AC7F-2F08-4184-3520-43C12F580B91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.plcsimadvanced.editor", "game4automation.interfaces.plcsimadvanced.editor.csproj", "{63EDDA1F-A10E-7B23-8765-6B8BBB220DDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.spacenavigator.editor", "game4automation.spacenavigator.editor.csproj", "{B77C1C7C-2B8F-0F21-42D7-921BC90F139B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.opcua.editor", "game4automation.interfaces.opcua.editor.csproj", "{79CC545A-AE2B-ED81-AEE7-6FA7BFF2FE5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.s7tcpip.editor", "game4automation.interfaces.s7tcpip.editor.csproj", "{D164EB3C-5B6E-EDC5-082F-0FF66052F7C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.sharedmemory.editor", "game4automation.sharedmemory.editor.csproj", "{9744C4A9-B5BA-E93B-58E2-EE54BBC337AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{079598CF-5185-619E-199D-9A9FF02E5571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079598CF-5185-619E-199D-9A9FF02E5571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079598CF-5185-619E-199D-9A9FF02E5571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079598CF-5185-619E-199D-9A9FF02E5571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EE3ECB6-AD17-6056-666F-B0465C58E439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EE3ECB6-AD17-6056-666F-B0465C58E439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EE3ECB6-AD17-6056-666F-B0465C58E439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EE3ECB6-AD17-6056-666F-B0465C58E439}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80850CA6-47D4-F9D9-1404-E46DA4B0091D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80850CA6-47D4-F9D9-1404-E46DA4B0091D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80850CA6-47D4-F9D9-1404-E46DA4B0091D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80850CA6-47D4-F9D9-1404-E46DA4B0091D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECE67548-51DD-2B1A-B2A1-D1820A6F1F13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECE67548-51DD-2B1A-B2A1-D1820A6F1F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECE67548-51DD-2B1A-B2A1-D1820A6F1F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECE67548-51DD-2B1A-B2A1-D1820A6F1F13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E5BD508-44B6-244A-FB18-98A50CCE2A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5BD508-44B6-244A-FB18-98A50CCE2A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5BD508-44B6-244A-FB18-98A50CCE2A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5BD508-44B6-244A-FB18-98A50CCE2A33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C262968F-FA0A-DCC9-A452-0719D852DE2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C262968F-FA0A-DCC9-A452-0719D852DE2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C262968F-FA0A-DCC9-A452-0719D852DE2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C262968F-FA0A-DCC9-A452-0719D852DE2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A7F088E-6B8A-A9B0-5144-3814DD050EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A7F088E-6B8A-A9B0-5144-3814DD050EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A7F088E-6B8A-A9B0-5144-3814DD050EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A7F088E-6B8A-A9B0-5144-3814DD050EF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7264D815-B846-2A8E-3B3C-DCBD9D3A839F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7264D815-B846-2A8E-3B3C-DCBD9D3A839F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7264D815-B846-2A8E-3B3C-DCBD9D3A839F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7264D815-B846-2A8E-3B3C-DCBD9D3A839F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6C1C970-7DD8-17DA-BA09-7BD74779EABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6C1C970-7DD8-17DA-BA09-7BD74779EABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6C1C970-7DD8-17DA-BA09-7BD74779EABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6C1C970-7DD8-17DA-BA09-7BD74779EABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F48501D-BFEA-8B57-E4C3-182B3A8C7DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F48501D-BFEA-8B57-E4C3-182B3A8C7DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F48501D-BFEA-8B57-E4C3-182B3A8C7DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F48501D-BFEA-8B57-E4C3-182B3A8C7DAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{188DB21F-A75C-79B7-AD98-B3A04EA14B24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{188DB21F-A75C-79B7-AD98-B3A04EA14B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{188DB21F-A75C-79B7-AD98-B3A04EA14B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{188DB21F-A75C-79B7-AD98-B3A04EA14B24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96F554B7-E54C-137B-1E69-70F86E851239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96F554B7-E54C-137B-1E69-70F86E851239}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96F554B7-E54C-137B-1E69-70F86E851239}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96F554B7-E54C-137B-1E69-70F86E851239}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB00F39-88DE-C121-32E9-0074B8364C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB00F39-88DE-C121-32E9-0074B8364C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB00F39-88DE-C121-32E9-0074B8364C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB00F39-88DE-C121-32E9-0074B8364C1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB53ED43-5E42-B6C8-5421-0B4B87E699C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB53ED43-5E42-B6C8-5421-0B4B87E699C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB53ED43-5E42-B6C8-5421-0B4B87E699C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB53ED43-5E42-B6C8-5421-0B4B87E699C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30A5AC7F-2F08-4184-3520-43C12F580B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30A5AC7F-2F08-4184-3520-43C12F580B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30A5AC7F-2F08-4184-3520-43C12F580B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30A5AC7F-2F08-4184-3520-43C12F580B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63EDDA1F-A10E-7B23-8765-6B8BBB220DDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63EDDA1F-A10E-7B23-8765-6B8BBB220DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63EDDA1F-A10E-7B23-8765-6B8BBB220DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63EDDA1F-A10E-7B23-8765-6B8BBB220DDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B77C1C7C-2B8F-0F21-42D7-921BC90F139B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B77C1C7C-2B8F-0F21-42D7-921BC90F139B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B77C1C7C-2B8F-0F21-42D7-921BC90F139B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B77C1C7C-2B8F-0F21-42D7-921BC90F139B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79CC545A-AE2B-ED81-AEE7-6FA7BFF2FE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CC545A-AE2B-ED81-AEE7-6FA7BFF2FE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CC545A-AE2B-ED81-AEE7-6FA7BFF2FE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CC545A-AE2B-ED81-AEE7-6FA7BFF2FE5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D164EB3C-5B6E-EDC5-082F-0FF66052F7C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D164EB3C-5B6E-EDC5-082F-0FF66052F7C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D164EB3C-5B6E-EDC5-082F-0FF66052F7C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D164EB3C-5B6E-EDC5-082F-0FF66052F7C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9744C4A9-B5BA-E93B-58E2-EE54BBC337AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9744C4A9-B5BA-E93B-58E2-EE54BBC337AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9744C4A9-B5BA-E93B-58E2-EE54BBC337AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9744C4A9-B5BA-E93B-58E2-EE54BBC337AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
