@@ -336,7 +336,7 @@
       <HintPath>Assets\game4automation\private\Resources\Tools\ZIP\I18N.dll</HintPath>
     </Reference>
     <Reference Include="Vuforia.UnityExtensions.Editor">
-      <HintPath>Library\PackageCache\com.ptc.vuforia.engine@541e0ca045\Vuforia\Plugins\Managed\Editor\Vuforia.UnityExtensions.Editor.dll</HintPath>
+      <HintPath>Library\PackageCache\com.ptc.vuforia.engine@28847b1d9f\Vuforia\Plugins\Managed\Editor\Vuforia.UnityExtensions.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Assets\game4automation\private\DLL\Newtonsoft.Json.dll</HintPath>
@@ -357,7 +357,7 @@
       <HintPath>Assets\game4automation\private\Resources\Tools\ZIP\I18N.West.dll</HintPath>
     </Reference>
     <Reference Include="Vuforia.UnityExtensions">
-      <HintPath>Library\PackageCache\com.ptc.vuforia.engine@541e0ca045\Vuforia\Plugins\Managed\Runtime\Vuforia.UnityExtensions.dll</HintPath>
+      <HintPath>Library\PackageCache\com.ptc.vuforia.engine@28847b1d9f\Vuforia\Plugins\Managed\Runtime\Vuforia.UnityExtensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.Emit">
       <HintPath>Assets\game4automation\private\Interfaces\OPCUA4Unity\private\System.Reflection.Emit.dll</HintPath>
