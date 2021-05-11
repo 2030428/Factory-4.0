@@ -19,6 +19,7 @@ public class EmergencyStopReader : MonoBehaviour
     {
         active = "False";
         inactive = "True";
+        checkEmgStop = true;
     }
 
     // Update is called once per frame

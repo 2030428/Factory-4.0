@@ -35,6 +35,8 @@ public class RFIDReadDirectData : MonoBehaviour
     {
         if (tryToConnect.tryConnect)
         {
+            timeToCheck = true;
+
             if (changeText)
             {
                 FM1.text = ("Awaiting connection to Machine 1...");
@@ -57,6 +59,7 @@ public class RFIDReadDirectData : MonoBehaviour
 
         else
         {
+            timeToCheck = false;
             FM1.text = ("No connection to Machine 1.");
             FM2.text = ("No connection to Machine 2.");
             FM3.text = ("No connection to Machine 3.");

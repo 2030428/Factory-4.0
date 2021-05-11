@@ -7,7 +7,7 @@ public class ScreenSwitcher : MonoBehaviour
 {
     public MeshRendererSwitch MeshSwitch;
 
-    public GameObject switchToAR, switchTo3D, ARCanvasDisplay, ARCam, ThreeDCam;
+    public GameObject switchToAR, switchTo3D, ARCam, ThreeDCam;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,6 @@ public class ScreenSwitcher : MonoBehaviour
         ARCam.SetActive(true);
         switchToAR.SetActive(false);
         switchTo3D.SetActive(true);
-        ARCanvasDisplay.SetActive(true);
         MeshSwitch.TurnOffMeshes();
     }
 
@@ -31,7 +30,6 @@ public class ScreenSwitcher : MonoBehaviour
         ThreeDCam.SetActive(true);
         switchToAR.SetActive(true);
         switchTo3D.SetActive(false);
-        ARCanvasDisplay.SetActive(false);
         MeshSwitch.TurnOnMeshes();
     }
 }
