@@ -9,6 +9,15 @@ TagManager:
   - g4a firstlight
   - g4a sun
   - g4a secondlight
+  - Machine1
+  - Machine2
+  - Machine3
+  - Machine4
+  - Machine5
+  - Machine6
+  - Machine7
+  - Machine8
+  - Machine9
   layers:
   - Default
   - TransparentFX

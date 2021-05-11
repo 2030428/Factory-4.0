@@ -14,7 +14,7 @@ public class RFIDReadDirectData : MonoBehaviour
 
     private string text1, text2, text3, text4, text5, text6, text7, text8, text9;
 
-    private bool changeText;
+    private bool changeText, timeToCheck;
 
     // Start is called before the first frame update
     void Start()
@@ -49,78 +49,12 @@ public class RFIDReadDirectData : MonoBehaviour
                 changeText = false;
             }
 
-            var ONE = Interface1.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
-            text1 = ("RFID tag at machine 1 is ") + ONE.ToString();
-            FM1.text = text1;
-            if (ONE == null)
+            if (timeToCheck)
             {
-                FM1.text = ("No reading RFID machine 1");
-            }
-
-            var TWO = Interface2.ReadNodeValue("ns = 3; s = \"dbRfidData\".\"ID1\".\"iCarrierID\"");
-            text2 = ("RFID tag at machine 2 is ") + TWO.ToString();
-            FM2.text = text2;
-            if (TWO == null)
-            {
-                FM2.text = ("No reading RFID machine 2");
-            }
-
-            var THREE = Interface3.ReadNodeValue("ns = 3; s = \"dbRfidData\".\"ID1\".\"iCarrierID\"");
-            text3 = ("RFID tag at machine 3 is ") + THREE.ToString();
-            FM3.text = text3;
-            if (THREE == null)
-            {
-                FM3.text = ("No reading RFID machine 3");
-            }
-
-            var FOUR = Interface4.ReadNodeValue("ns = 3; s = \"dbRfidData\".\"ID1\".\"iCarrierID\"");
-            text4 = ("RFID tag at machine 4 is ") + FOUR.ToString();
-            FM4.text = text4;
-            if (FOUR == null)
-            {
-                FM4.text = ("No reading RFID machine 4");
-            }
-
-            var FIVE = Interface5.ReadNodeValue("ns = 3; s = \"dbRfidData\".\"ID1\".\"iCarrierID\"");
-            text5 = ("RFID tag at machine 5 is ") + FIVE.ToString();
-            FM5.text = text5;
-            if (FIVE == null)
-            {
-                FM5.text = ("No reading RFID machine 5");
-            }
-
-            var SIX = Interface6.ReadNodeValue("ns = 3; s = \"dbRfidData\".\"ID1\".\"iCarrierID\"");
-            text6 = ("RFID tag at machine 6 is ") + SIX.ToString();
-            FM6.text = text6;
-            if (SIX == null)
-            {
-                FM6.text = ("No reading RFID machine 6");
-            }
-
-            var SEVEN = Interface7.ReadNodeValue("ns = 3; s = \"dbRfidData\".\"ID1\".\"iCarrierID\"");
-            text7 = ("RFID tag at machine 7 is ") + SEVEN.ToString();
-            FM7.text = text7;
-            if (SEVEN == null)
-            {
-                FM7.text = ("No reading RFID machine 7");
-            }
-
-            var EIGHT = Interface8.ReadNodeValue("ns = 3; s = \"dbRfidData\".\"ID1\".\"iCarrierID\"");
-            text8 = ("RFID tag at machine 8 is ") + EIGHT.ToString();
-            FM8.text = text8;
-            if (EIGHT == null)
-            {
-                FM8.text = ("No reading RFID machine 8");
-            }
-
-            var NINE = Interface9.ReadNodeValue("ns = 3; s = \"dbRfidData\".\"ID1\".\"iCarrierID\"");
-            text9 = ("RFID tag at machine 9 is ") + NINE.ToString();
-            FM9.text = text9;
-            if (NINE == null)
-            {
-                FM9.text = ("No reading RFID machine 9");
+                StartCoroutine(RFIDDataCheck());
             }
         }
+
         else
         {
             FM1.text = ("No connection to Machine 1.");
@@ -135,4 +69,115 @@ public class RFIDReadDirectData : MonoBehaviour
             changeText = true;
         }
     }
+
+    IEnumerator RFIDDataCheck()
+    {
+        timeToCheck = false;
+
+        var ONE = Interface1.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
+        if (ONE == null)
+        {
+            FM1.text = ("No reading RFID machine 1");
+        }
+        else
+        {
+            text1 = ("The last RFID tag at machine 1 was ") + ONE.ToString();
+            FM1.text = text1;
+        }
+
+        var TWO = Interface2.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
+        if (TWO == null)
+        {
+            FM2.text = ("No reading RFID machine 2");
+        }
+        else
+        {
+            text2 = ("The last RFID tag at machine 2 was ") + TWO.ToString();
+            FM2.text = text2;
+        }
+
+        var THREE = Interface3.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
+        if (THREE == null)
+        {
+            FM3.text = ("No reading RFID machine 3");
+        }
+        else
+        {
+            text1 = ("The last RFID tag at machine 3 was ") + THREE.ToString();
+            FM3.text = text3;
+        }
+
+        var FOUR = Interface4.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
+        if (FOUR == null)
+        {
+            FM4.text = ("No reading RFID machine 4");
+        }
+        else
+        {
+            text4 = ("The last RFID tag at machine 4 was ") + FOUR.ToString();
+            FM4.text = text4;
+        }
+
+        var FIVE = Interface5.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
+        if (FIVE == null)
+        {
+            FM5.text = ("No reading RFID machine 5");
+        }
+        else
+        {
+            text5 = ("The last RFID tag at machine 5 was ") + FIVE.ToString();
+            FM5.text = text5;
+        }
+
+        var SIX = Interface6.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
+        if (SIX == null)
+        {
+            FM6.text = ("No reading RFID machine 6");
+        }
+        else
+        {
+            text6 = ("The last RFID tag at machine 6 was ") + SIX.ToString();
+            FM6.text = text6;
+        }
+
+        var SEVEN = Interface7.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
+        if (SEVEN == null)
+        {
+            FM7.text = ("No reading RFID machine 7");
+        }
+        else
+        {
+            text7 = ("The last RFID tag at machine 7 was ") + SEVEN.ToString();
+            FM7.text = text7;
+        }
+
+        var EIGHT = Interface8.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
+        if (EIGHT == null)
+        {
+            FM8.text = ("No reading RFID machine 8");
+        }
+        else
+        {
+            text8 = ("The last RFID tag at machine 8 was ") + EIGHT.ToString();
+            FM8.text = text8;
+        }
+
+        var NINE = Interface9.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
+        if (NINE == null)
+        {
+            FM9.text = ("No reading RFID machine 9");
+        }
+        else
+        {
+            text9 = ("The last RFID tag at machine 9 was ") + NINE.ToString();
+            FM9.text = text9;
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        timeToCheck = true;
+    }
 }
+
+    
+

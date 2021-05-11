@@ -56,15 +56,20 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\MeshRendererSwitch.cs" />
-    <Compile Include="Assets\Scripts\RFIDReadDirectData.cs" />
-    <Compile Include="Assets\Scripts\ScreenSwitcher.cs" />
-    <Compile Include="Assets\Scripts\BuildPhone.cs" />
-    <Compile Include="Assets\Scripts\AttemptConnect.cs" />
     <Compile Include="Assets\Scripts\ShowObject.cs" />
+    <Compile Include="Assets\Scripts\MeshRendererSwitch.cs" />
+    <Compile Include="Assets\Scripts\RFIDReaderSubscribeMultiple.cs" />
+    <Compile Include="Assets\Scripts\EmergencyStopReader.cs" />
+    <Compile Include="Assets\Scripts\RFIDReadDirectDataCombiPlatter.cs" />
+    <Compile Include="Assets\Scripts\RFIDReadDirectData.cs" />
+    <Compile Include="Assets\Scripts\RFIDReaderSubscribe.cs" />
+    <Compile Include="Assets\Scripts\ScreenSwitcher.cs" />
+    <Compile Include="Assets\Scripts\AttemptConnect.cs" />
+    <Compile Include="Assets\Scripts\BuildPhone.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\StreamingAssets\Vuforia\ARTest.xml" />
+     <None Include="Assets\StreamingAssets\Vuforia\Festo2021v2.xml" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Editors\2020.3.5f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -751,6 +756,10 @@
       <Project>{3B904596-8AD9-86C2-C38C-C3AA4543C917}</Project>
       <Name>game4automation.sharedmemory.editor</Name>
     </ProjectReference>
+    <ProjectReference Include="EditorMigrationScripts.csproj">
+      <Project>{0C62A703-0150-38D6-138E-DDEE0CBE730D}</Project>
+      <Name>EditorMigrationScripts</Name>
+    </ProjectReference>
     <ProjectReference Include="game4automation.parts4cad.editor.csproj">
       <Project>{E5C523C9-5EC8-6232-16E6-8B6D96241AF8}</Project>
       <Name>game4automation.parts4cad.editor</Name>
@@ -774,10 +783,6 @@
     <ProjectReference Include="game4automation.interfaces.plcsimadvanced.csproj">
       <Project>{E06F425A-B377-8419-121B-7DF5DF00E5CE}</Project>
       <Name>game4automation.interfaces.plcsimadvanced</Name>
-    </ProjectReference>
-    <ProjectReference Include="EditorMigrationScripts.csproj">
-      <Project>{0C62A703-0150-38D6-138E-DDEE0CBE730D}</Project>
-      <Name>EditorMigrationScripts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

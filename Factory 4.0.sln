@@ -9,11 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Core", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.cadlink", "game4automation.cadlink.csproj", "{154DA4E4-B19F-5299-8504-394C52FA49FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.plcsimadvanced", "game4automation.interfaces.plcsimadvanced.csproj", "{E06F425A-B377-8419-121B-7DF5DF00E5CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.parts4cad", "game4automation.parts4cad.csproj", "{B9F4A01D-3CDD-A514-FC4D-A68C99FB67BF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.spacenavigator", "game4automation.spacenavigator.csproj", "{02025A44-F7DB-BF3C-8787-FD3FDFE25C82}"
 EndProject
@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.parts4cad.e
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.plcsimadvanced.editor", "game4automation.interfaces.plcsimadvanced.editor.csproj", "{7F75DD7F-9532-E14A-AAAA-5464CED1F097}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorMigrationScripts", "EditorMigrationScripts.csproj", "{0C62A703-0150-38D6-138E-DDEE0CBE730D}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.spacenavigator.editor", "game4automation.spacenavigator.editor.csproj", "{2F2833F3-866D-A68C-7C88-F3EF12250C87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.opcua.editor", "game4automation.interfaces.opcua.editor.csproj", "{67285502-5805-F428-20A5-55E07CC6D70D}"
@@ -40,8 +42,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.s7tcpip.editor", "game4automation.interfaces.s7tcpip.editor.csproj", "{D4C7718B-93B0-8C5B-3604-40954E5EC324}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.sharedmemory.editor", "game4automation.sharedmemory.editor.csproj", "{3B904596-8AD9-86C2-C38C-C3AA4543C917}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorMigrationScripts", "EditorMigrationScripts.csproj", "{0C62A703-0150-38D6-138E-DDEE0CBE730D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +65,10 @@ Global
 		{154DA4E4-B19F-5299-8504-394C52FA49FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{154DA4E4-B19F-5299-8504-394C52FA49FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{154DA4E4-B19F-5299-8504-394C52FA49FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E06F425A-B377-8419-121B-7DF5DF00E5CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E06F425A-B377-8419-121B-7DF5DF00E5CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E06F425A-B377-8419-121B-7DF5DF00E5CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -73,10 +77,6 @@ Global
 		{B9F4A01D-3CDD-A514-FC4D-A68C99FB67BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9F4A01D-3CDD-A514-FC4D-A68C99FB67BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9F4A01D-3CDD-A514-FC4D-A68C99FB67BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{02025A44-F7DB-BF3C-8787-FD3FDFE25C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{02025A44-F7DB-BF3C-8787-FD3FDFE25C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02025A44-F7DB-BF3C-8787-FD3FDFE25C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -113,6 +113,10 @@ Global
 		{7F75DD7F-9532-E14A-AAAA-5464CED1F097}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F75DD7F-9532-E14A-AAAA-5464CED1F097}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F75DD7F-9532-E14A-AAAA-5464CED1F097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C62A703-0150-38D6-138E-DDEE0CBE730D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C62A703-0150-38D6-138E-DDEE0CBE730D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C62A703-0150-38D6-138E-DDEE0CBE730D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C62A703-0150-38D6-138E-DDEE0CBE730D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F2833F3-866D-A68C-7C88-F3EF12250C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2F2833F3-866D-A68C-7C88-F3EF12250C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F2833F3-866D-A68C-7C88-F3EF12250C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -129,10 +133,6 @@ Global
 		{3B904596-8AD9-86C2-C38C-C3AA4543C917}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B904596-8AD9-86C2-C38C-C3AA4543C917}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B904596-8AD9-86C2-C38C-C3AA4543C917}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0C62A703-0150-38D6-138E-DDEE0CBE730D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C62A703-0150-38D6-138E-DDEE0CBE730D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C62A703-0150-38D6-138E-DDEE0CBE730D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C62A703-0150-38D6-138E-DDEE0CBE730D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
