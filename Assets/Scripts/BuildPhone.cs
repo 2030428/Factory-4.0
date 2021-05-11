@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary> 
 /// TCP Client-Server Connection Example.
@@ -31,11 +32,17 @@ public class BuildPhone : MonoBehaviour
 	public string newOrderMessage = "444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=210;#Aux1Int=1\r";
 	#endregion
 
+	public OrderTracker orderTracker;
+	public RFIDReadDirectData connectionCheck;
+
+	public Button orderButton;
+	public Text orderButtonText;
 
 	// Use this for initialization 	
 	void Start()
 	{
 		ConnectToTcpServer();
+		orderButtonText.text = "Build 1 item";
 	}
 
 	/// <summary> 	
@@ -122,6 +129,26 @@ public class BuildPhone : MonoBehaviour
 	/// <summary> 
 	public void OrderCompleteNewPhone()
 	{
-		SendMessageToServer(newOrderMessage);
+		if(connectionCheck.text1 == "." || connectionCheck.text1 == "No connection to Machine 1.")
+        {
+			StartCoroutine(DisableOrderButton());
+			orderTracker.TrackBuild();
+		}
+		else
+        {
+			SendMessageToServer(newOrderMessage);
+			StartCoroutine(DisableOrderButton());
+			orderTracker.TrackBuild();
+		}
+	}
+
+
+	IEnumerator DisableOrderButton()
+    {
+		orderButton.enabled = false;
+		orderButtonText.text = "Button disabled while attempting order...";
+		yield return new WaitForSeconds(5f);
+		orderButton.enabled = true;
+		orderButtonText.text = "Build 1 item";
 	}
 }

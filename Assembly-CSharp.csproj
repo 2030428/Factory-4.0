@@ -66,6 +66,8 @@
     <Compile Include="Assets\Scripts\ScreenSwitcher.cs" />
     <Compile Include="Assets\Scripts\AttemptConnect.cs" />
     <Compile Include="Assets\Scripts\BuildPhone.cs" />
+    <Compile Include="Assets\Scripts\OrderTracker.cs" />
+    <Compile Include="Assets\Scripts\ARDisplayOrderTrack.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\StreamingAssets\Vuforia\ARTest.xml" />
