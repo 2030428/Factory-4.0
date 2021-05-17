@@ -4,13 +4,17 @@ using UnityEngine;
 using game4automation;
 using UnityEngine.UI;
 
-public class RFIDReaderSubscribe : MonoBehaviour
+public class ResetEmergencyStopSubscribe : MonoBehaviour
 {
     public OPCUA_Interface Interface;
 
-    public Text FM;
+    public string info;
 
-    public string info, factoryMachine;
+    public int machineNumber;
+
+    public bool needToReset;
+
+    private string active, inactive;
 
 
     // Start is called before the first frame update
@@ -19,18 +23,30 @@ public class RFIDReaderSubscribe : MonoBehaviour
         Interface.EventOnConnected.AddListener(OnConnected);
         Interface.EventOnConnected.AddListener(OnDisconnected);
         Interface.EventOnConnected.AddListener(OnReconnect);
+
+        active = "False";
+        inactive = "True";
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        FM.text = factoryMachine + " last saw RFID tag " + info;
+        if(info == active)
+        {
+            needToReset = false;
+        }
+
+        if(info == inactive)
+        {
+            needToReset = true;
+        }
     }
 
     private void OnConnected()
     {
         Debug.Log("Connected");
-        var subscription = Interface.Subscribe("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"", NodeChanged);
+        var subscription = Interface.Subscribe("ns=3;s=\"dbOpPanel\".\"OpPanelBtn\".\"xReset\"", NodeChanged);
         info = subscription.ToString();
     }
 
@@ -47,6 +63,7 @@ public class RFIDReaderSubscribe : MonoBehaviour
     public void NodeChanged(OPCUANodeSubscription sub, object value)
     {        
         info = value.ToString();
-        Debug.Log(sub.NodeId + " " + sub.StatusGood);
-    }    
+        Debug.Log(sub.NodeId + " " + sub.StatusGood);        
+    }
 }
+

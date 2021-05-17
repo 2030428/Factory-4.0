@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class OrderTracker : MonoBehaviour
 {
-    public RFIDReadDirectData RFIDData;
+    public RFIDReaderSubscribe[] RFIDData;
+    public ConnectionChecker connection;
+    public BuildPhone buildData;
 
     public string orderInfo;
 
@@ -18,12 +20,12 @@ public class OrderTracker : MonoBehaviour
 
     private string firstRead, buildPallet, secondMachine, finalMachine;
     private string[] palletData;
+    public string machineOrderNumber;
 
     // Start is called before the first frame update
     void Start()
     {
         orderCounter = 0;
-        orderInfo = "No build currently in progress.";
     }
 
     // Update is called once per frame
@@ -31,86 +33,71 @@ public class OrderTracker : MonoBehaviour
     {
         overlayOrderDisplay.text = orderInfo;
 
+        if (connection.connected && !orderActive)
+        {
+            orderInfo = "Connected to machine, awaiting order.";
+        }
+        if (!connection.connected)
+        {
+            orderInfo = "Not currently connected to machine."; ;
+        }
+
         if (orderActive)
         {            
-            orderInfo = "Your order is initialising...";
-            buildPallet = RFIDData.text1;
+            machineOrderNumber = buildData.orderNumber.Substring(64, 67);
+            Debug.LogError(machineOrderNumber);
+            StartCoroutine(DelayRead());
 
-            if (firstRead != buildPallet)
-            {
-                string palletNumber = buildPallet.Substring(36);
-                orderInfo = "Order number " + orderCounter + "is on pallet number " + palletNumber;
-                if (palletData[1] == null)
-                {
-                    palletData[1] = palletNumber;
-                    orderNumber[1] = orderCounter;
-                    Debug.Log("Order number " + orderNumber[1] + " is on pallet number " + palletData[1]);
-                }
-                if (palletData[1] != null && palletData[2] == null)
-                {
-                    palletData[2] = palletNumber;
-                    orderNumber[2] = orderCounter;
-                    Debug.Log("Order number " + orderNumber[2] + " is on pallet number " + palletData[2]);
-                }
-                if (palletData[2] != null && palletData[3] == null)
-                {
-                    palletData[3] = palletNumber;
-                    orderNumber[3] = orderCounter;
-                    Debug.Log("Order number " + orderNumber[3] + " is on pallet number " + palletData[3]);
-                }
-                if (palletData[3] != null && palletData[4] == null)
-                {
-                    palletData[4] = palletNumber;
-                    orderNumber[4] = orderCounter;
-                    Debug.Log("Order number " + orderNumber[4] + " is on pallet number " + palletData[4]);
-                }
-            }
-
-            CheckCompletion();
-
+            //CheckCompletion();
         }
     }
 
     public void TrackBuild()
     {        
-        if (RFIDData.text1 == "." || RFIDData.text1 == "No connection to Machine 1.")
+        if (!connection.connected)
         {
             orderInfo = "No connection to machine, try again.";
         }
-        else
+        if(connection.connected)
         {
             orderCounter++;
-            firstRead = RFIDData.text1;
+            firstRead = RFIDData[0].info;
             orderActive = true;
         }
     }
 
-    public void CheckSecondMachine()
+    public IEnumerator DelayRead()
     {
-        secondMachine = RFIDData.text2;
-        string secondMachinePallet = secondMachine.Substring(36);
-
-        for (int i = 0; i < palletData.Length; i++)
-        {
-            if (palletData[i] == secondMachinePallet)
-            {
-                orderInfo = "Pallet " + palletData[i] + " with order number " + orderNumber[i] + " is at the second machine.";
-                Debug.Log("A recognised order is at machine 2");
-            }
-        }
+        orderInfo = "Your order is initialising...";
+        yield return new WaitForSeconds(5f);
+        buildPallet = RFIDData[0].info;
+        orderInfo = "Your order is number " + machineOrderNumber + " and is on pallet " + buildPallet;
     }
 
-    public void CheckCompletion()
-    {
-        finalMachine = RFIDData.text9;
-        string finalMachinePallet = finalMachine.Substring(36);
+    //public void CheckSecondMachine()
+    //{
+    //    secondMachine = RFIDData[1].info;
 
-        for(int i = 0; i < palletData.Length; i++)
-        {
-            if(palletData[i] == finalMachinePallet)
-            {
-                orderInfo = "Pallet " + palletData[i] + " with order number " + orderNumber[i] + " is at the final machine.";
-            }
-        }
-    }
+    //    for (int i = 0; i < palletData.Length; i++)
+    //    {
+    //        if (palletData[i] == secondMachine)
+    //        {
+    //            orderInfo = "Pallet " + palletData[i] + " with order number " + orderNumber[i] + " is at the second machine.";
+    //            Debug.Log("A recognised order is at machine 2");
+    //        }
+    //    }
+    //}
+
+    //public void CheckCompletion()
+    //{
+    //    finalMachine = RFIDData[8].info;
+
+    //    for (int i = 0; i < palletData.Length; i++)
+    //    {
+    //        if (palletData[i] == finalMachine)
+    //        {
+    //            orderInfo = "Pallet " + palletData[i] + " with order number " + orderNumber[i] + " is at the final machine.";
+    //        }
+    //    }
+    //}
 }

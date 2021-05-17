@@ -78,6 +78,7 @@ public class RFIDReadDirectData : MonoBehaviour
     {
         timeToCheck = false;
 
+        yield return new WaitForSeconds(0.15f);
         var ONE = Interface1.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
         if (ONE == null)
         {
@@ -89,7 +90,7 @@ public class RFIDReadDirectData : MonoBehaviour
             FM1.text = text1;
         }
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.15f);
         var TWO = Interface2.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
         if (TWO == null)
         {
@@ -101,7 +102,7 @@ public class RFIDReadDirectData : MonoBehaviour
             FM2.text = text2;
         }
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.15f);
         var THREE = Interface3.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
         if (THREE == null)
         {
@@ -113,7 +114,7 @@ public class RFIDReadDirectData : MonoBehaviour
             FM3.text = text3;
         }
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.15f);
         var FOUR = Interface4.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
         if (FOUR == null)
         {
@@ -125,7 +126,7 @@ public class RFIDReadDirectData : MonoBehaviour
             FM4.text = text4;
         }
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.15f);
         var FIVE = Interface5.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
         if (FIVE == null)
         {
@@ -137,7 +138,7 @@ public class RFIDReadDirectData : MonoBehaviour
             FM5.text = text5;
         }
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.15f);
         var SIX = Interface6.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
         if (SIX == null)
         {
@@ -149,7 +150,7 @@ public class RFIDReadDirectData : MonoBehaviour
             FM6.text = text6;
         }
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.15f);
         var SEVEN = Interface7.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
         if (SEVEN == null)
         {
@@ -161,6 +162,7 @@ public class RFIDReadDirectData : MonoBehaviour
             FM7.text = text7;
         }
 
+        yield return new WaitForSeconds(0.15f);
         var EIGHT = Interface8.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
         if (EIGHT == null)
         {
@@ -172,7 +174,7 @@ public class RFIDReadDirectData : MonoBehaviour
             FM8.text = text8;
         }
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.15f);
         var NINE = Interface9.ReadNodeValue("ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\"");
         if (NINE == null)
         {
@@ -184,7 +186,7 @@ public class RFIDReadDirectData : MonoBehaviour
             FM9.text = text9;
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
 
         timeToCheck = true;
     }

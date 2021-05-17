@@ -29,14 +29,18 @@ public class BuildPhone : MonoBehaviour
 	// Example of a message to send to the MES server.
 	// This message places a new order of the complete mobile phone (known as part number 210). See documentation on Canvas for full breakdown of how this string is formatted.
 	// Additional part numbers can be found on the Festo PC.   
-	public string newOrderMessage = "444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=210;#Aux1Int=1\r";
+	public string newOrderMessage = "444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=3003;#Aux1Int=1\r";
+
+
 	#endregion
 
 	public OrderTracker orderTracker;
-	public RFIDReadDirectData connectionCheck;
+	public ConnectionChecker connectionCheck;
 
 	public Button orderButton;
 	public Text orderButtonText;
+
+	public string orderNumber;
 
 	// Use this for initialization 	
 	void Start()
@@ -86,6 +90,7 @@ public class BuildPhone : MonoBehaviour
 
 						// this is the message the MES server sends back. Its formatting is the same as the message you send to it. 
 						Debug.Log("Server message received as: " + serverMessage);
+						orderNumber = serverMessage;
 					}
 				}
 			}
@@ -129,7 +134,7 @@ public class BuildPhone : MonoBehaviour
 	/// <summary> 
 	public void OrderCompleteNewPhone()
 	{
-		if(connectionCheck.text1 == "." || connectionCheck.text1 == "No connection to Machine 1.")
+		if(!connectionCheck.allConnected)
         {
 			StartCoroutine(DisableOrderButton());
 			orderTracker.TrackBuild();

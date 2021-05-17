@@ -56,18 +56,22 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\EmergencyStopSubscribe.cs" />
     <Compile Include="Assets\Scripts\ShowObject.cs" />
+    <Compile Include="Assets\Scripts\OrderTracker.cs" />
     <Compile Include="Assets\Scripts\MeshRendererSwitch.cs" />
     <Compile Include="Assets\Scripts\RFIDReaderSubscribeMultiple.cs" />
     <Compile Include="Assets\Scripts\EmergencyStopReader.cs" />
-    <Compile Include="Assets\Scripts\RFIDReadDirectDataCombiPlatter.cs" />
+    <Compile Include="Assets\Scripts\ConnectionIndicator.cs" />
+    <Compile Include="Assets\Scripts\EmgStopMaster.cs" />
+    <Compile Include="Assets\Scripts\ResetEmergencyStopSubscribe.cs" />
     <Compile Include="Assets\Scripts\RFIDReadDirectData.cs" />
     <Compile Include="Assets\Scripts\RFIDReaderSubscribe.cs" />
     <Compile Include="Assets\Scripts\ScreenSwitcher.cs" />
+    <Compile Include="Assets\Scripts\ConnectionChecker.cs" />
     <Compile Include="Assets\Scripts\AttemptConnect.cs" />
-    <Compile Include="Assets\Scripts\BuildPhone.cs" />
-    <Compile Include="Assets\Scripts\OrderTracker.cs" />
     <Compile Include="Assets\Scripts\ARDisplayOrderTrack.cs" />
+    <Compile Include="Assets\Scripts\BuildPhone.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\StreamingAssets\Vuforia\ARTest.xml" />
