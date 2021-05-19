@@ -72,6 +72,15 @@
     <Compile Include="Assets\Scripts\AttemptConnect.cs" />
     <Compile Include="Assets\Scripts\ARDisplayOrderTrack.cs" />
     <Compile Include="Assets\Scripts\BuildPhone.cs" />
+    <Compile Include="Assets\Scripts\JSON\OrderOptionJSON.cs" />
+    <Compile Include="Assets\Scripts\JSON\JsonHelper.cs" />
+    <Compile Include="Assets\Scripts\JSON\json.cs" />
+    <Compile Include="Assets\Scripts\JSON\OrderOptions.cs" />
+    <Compile Include="Assets\Scripts\JSON\CurrentOrders.cs" />
+    <Compile Include="Assets\Scripts\JSON\CurrentOrdersJSON.cs" />
+    <Compile Include="Assets\Scripts\JSON\FinishedOrdersJSON.cs" />
+    <Compile Include="Assets\Scripts\JSON\FinishedOrders.cs" />
+    <Compile Include="Assets\Scripts\ShowOrderBar.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\StreamingAssets\Vuforia\ARTest.xml" />
