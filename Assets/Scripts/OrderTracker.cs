@@ -33,18 +33,17 @@ public class OrderTracker : MonoBehaviour
     {
         overlayOrderDisplay.text = orderInfo;
 
-        if (connection.connected && !orderActive)
+        if (connection.allConnected && !orderActive)
         {
             orderInfo = "Connected to machine, awaiting order.";
         }
-        if (!connection.connected)
+        if (!connection.allConnected)
         {
             orderInfo = "Not currently connected to machine."; ;
         }
 
         if (orderActive)
         {            
-            machineOrderNumber = buildData.orderNumber.Substring(64, 67);
             Debug.LogError(machineOrderNumber);
             StartCoroutine(DelayRead());
 
@@ -54,11 +53,11 @@ public class OrderTracker : MonoBehaviour
 
     public void TrackBuild()
     {        
-        if (!connection.connected)
+        if (!connection.allConnected)
         {
             orderInfo = "No connection to machine, try again.";
         }
-        if(connection.connected)
+        if(connection.allConnected)
         {
             orderCounter++;
             firstRead = RFIDData[0].info;

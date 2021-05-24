@@ -46,6 +46,7 @@ public class EmergencyStopSubscribe : MonoBehaviour
             idle.SetActive(true);
             emergency.SetActive(false);
             good.SetActive(false);
+            NoConnection();
         }
 
         if (info == active)
@@ -54,7 +55,7 @@ public class EmergencyStopSubscribe : MonoBehaviour
             emergency.SetActive(true);
             idle.SetActive(false);
             good.SetActive(false);
-
+            EmergencySphereActive();
             triggered = true;
         }
 
@@ -63,7 +64,7 @@ public class EmergencyStopSubscribe : MonoBehaviour
             good.SetActive(true);
             idle.SetActive(false);
             emergency.SetActive(false);
-
+            EmergencySphereInactive();
             triggered = false;
         }
     }

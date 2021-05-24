@@ -5,37 +5,39 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 
-public class CurrentOrders: MonoBehaviour
+public class tblOrderPos: MonoBehaviour
 {
-    public List<string> CurrentOrderData = new List<string>();
+    public CurrentOrders currentOrders;
 
-    public CurrentOrderJSON[] currentOrdersObjectArray;
+    public List<string> tblOrderPosData = new List<string>();
 
     public string listInfo;
 
     public Text info;
 
-    public void ReceieveData(string CurrentOrderStringPHPMany)
+    public tblOrderPosJSON[] tblOrderPosObjectArray;
+
+    public void ReceieveData(string tblOrderPosStringPHPMany)
     {
-        string newCurrentOrderStringPHPMany = fixJson(CurrentOrderStringPHPMany);
+        string newtblOrderPosStringPHPMany = fixJson(tblOrderPosStringPHPMany);
 
-        Debug.Log(newCurrentOrderStringPHPMany);
+        Debug.Log(newtblOrderPosStringPHPMany);
 
-        currentOrdersObjectArray = JsonHelper.FromJson<CurrentOrderJSON>(newCurrentOrderStringPHPMany);
+        tblOrderPosObjectArray = JsonHelper.FromJson<tblOrderPosJSON>(newtblOrderPosStringPHPMany);
 
-        CurrentOrderData.Clear();
+        tblOrderPosData.Clear();
         listInfo = "";
 
-        for (int i = 0; i < currentOrdersObjectArray.Length; i++)
+        for (int i = 0; i < tblOrderPosObjectArray.Length; i++)
         {
-            Debug.Log("ONo:" + currentOrdersObjectArray[i].ONo + ", Company:" + currentOrdersObjectArray[i].Company + ", Planned Start:" + currentOrdersObjectArray[i].PlannedStart + ", Planned End:" + currentOrdersObjectArray[i].PlannedEnd + ", State:" + currentOrdersObjectArray[i].State);
+            Debug.Log("ONo:" + tblOrderPosObjectArray[i].ONo + ", Step No:" + tblOrderPosObjectArray[i].StepNo);
 
-            CurrentOrderData.Add("ONo:" + currentOrdersObjectArray[i].ONo + ", Company:" + currentOrdersObjectArray[i].Company + ", Planned Start:" + currentOrdersObjectArray[i].PlannedStart + ", Planned End:" + currentOrdersObjectArray[i].PlannedEnd + ", State:" + currentOrdersObjectArray[i].State);
+            tblOrderPosData.Add("ONo:" + tblOrderPosObjectArray[i].ONo + ", Step No:" + tblOrderPosObjectArray[i].StepNo);
         }
 
-        foreach(var listMember in CurrentOrderData)
+        foreach (var listMember in tblOrderPosData)
         {
-            listInfo += listMember.ToString() + "\n" + "\n"; 
+            listInfo += listMember.ToString() + "\n" + "\n";
         }
 
         info.text = listInfo;
@@ -49,7 +51,15 @@ public class CurrentOrders: MonoBehaviour
 
     public void GetRequestPublic()
     {
-        StartCoroutine(GetRequest("http://172.21.0.90/SQLData.php?Command=currentOrders"));
+        for (int i = 0; i < currentOrders.currentOrdersObjectArray.Length; i++)
+        {
+            var ONO = currentOrders.currentOrdersObjectArray[i].ONo;
+
+            StartCoroutine(GetRequest(" http://172.21.0.90/SQLDataStudents.php?Command=tblStep?ONo=" + ONO));
+        }
+
+        //StartCoroutine(GetRequest(" http://172.21.0.90/SQLDataStudents.php?Command=tblStep?ONo=2579 "));
+
     }
 
     IEnumerator GetRequest(string uri)
@@ -74,7 +84,7 @@ public class CurrentOrders: MonoBehaviour
                 case UnityWebRequest.Result.Success:
                     Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
                     ReceieveData(webRequest.downloadHandler.text);
-                    Debug.LogError("Current Orders Success");
+                    Debug.LogError("Finished Orders Success");
 
                     break;
             }

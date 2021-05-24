@@ -58,33 +58,58 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\EmergencyStopSubscribe.cs" />
     <Compile Include="Assets\Scripts\ShowObject.cs" />
+    <Compile Include="Assets\Scripts\JSON\CurrentOrders.cs" />
+    <Compile Include="Assets\Scripts\JSON\OrderOptions.cs" />
     <Compile Include="Assets\Scripts\OrderTracker.cs" />
     <Compile Include="Assets\Scripts\MeshRendererSwitch.cs" />
     <Compile Include="Assets\Scripts\RFIDReaderSubscribeMultiple.cs" />
     <Compile Include="Assets\Scripts\EmergencyStopReader.cs" />
+    <Compile Include="Assets\Scripts\ShowOrderBar.cs" />
+    <Compile Include="Assets\Scripts\JSON\FinishedOrdersJSON.cs" />
     <Compile Include="Assets\Scripts\ConnectionIndicator.cs" />
+    <Compile Include="Assets\Scripts\JSON\FinishedOrders.cs" />
     <Compile Include="Assets\Scripts\EmgStopMaster.cs" />
+    <Compile Include="Assets\Scripts\JSON\OrderOptionJSON.cs" />
+    <Compile Include="Assets\Scripts\JSON\CurrentOrdersJSON.cs" />
     <Compile Include="Assets\Scripts\ResetEmergencyStopSubscribe.cs" />
     <Compile Include="Assets\Scripts\RFIDReadDirectData.cs" />
+    <Compile Include="Assets\Scripts\JSON\json.cs" />
+    <Compile Include="Assets\Scripts\JSON\tblOrderPos.cs" />
+    <Compile Include="Assets\Scripts\JSON\tblOrderPosJSON.cs" />
     <Compile Include="Assets\Scripts\RFIDReaderSubscribe.cs" />
     <Compile Include="Assets\Scripts\ScreenSwitcher.cs" />
     <Compile Include="Assets\Scripts\ConnectionChecker.cs" />
     <Compile Include="Assets\Scripts\AttemptConnect.cs" />
     <Compile Include="Assets\Scripts\ARDisplayOrderTrack.cs" />
     <Compile Include="Assets\Scripts\BuildPhone.cs" />
-    <Compile Include="Assets\Scripts\JSON\OrderOptionJSON.cs" />
     <Compile Include="Assets\Scripts\JSON\JsonHelper.cs" />
-    <Compile Include="Assets\Scripts\JSON\json.cs" />
-    <Compile Include="Assets\Scripts\JSON\OrderOptions.cs" />
-    <Compile Include="Assets\Scripts\JSON\CurrentOrders.cs" />
-    <Compile Include="Assets\Scripts\JSON\CurrentOrdersJSON.cs" />
-    <Compile Include="Assets\Scripts\JSON\FinishedOrdersJSON.cs" />
-    <Compile Include="Assets\Scripts\JSON\FinishedOrders.cs" />
-    <Compile Include="Assets\Scripts\ShowOrderBar.cs" />
+    <Compile Include="Assets\Scripts\JSON\cartJSON.cs" />
+    <Compile Include="Assets\Scripts\JSON\cart.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\StreamingAssets\Vuforia\ARTest.xml" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\StreamingAssets\Vuforia\Festo2021v2.xml" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Editors\2020.3.5f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

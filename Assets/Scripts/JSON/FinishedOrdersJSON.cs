@@ -7,4 +7,5 @@ public class FinishedOrdersJSON
     public string PlannedStart;
     public string PlannedEnd;
     public string State;
+
 }

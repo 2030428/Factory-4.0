@@ -40,7 +40,13 @@ public class BuildPhone : MonoBehaviour
 	public Button orderButton;
 	public Text orderButtonText;
 
-	public string orderNumber;
+	private string subString;
+
+	public int currentOrderNumber; //Ono
+	public int currentOrderPosition; //Opos
+	public int currentProductNumberOfOrderNumber; //WPNo
+	public int currentOrderPartNumber; //PNo
+	public int currentStepNumber; //StepNo
 
 	// Use this for initialization 	
 	void Start()
@@ -90,7 +96,9 @@ public class BuildPhone : MonoBehaviour
 
 						// this is the message the MES server sends back. Its formatting is the same as the message you send to it. 
 						Debug.Log("Server message received as: " + serverMessage);
-						orderNumber = serverMessage;
+						
+						if (serverMessage.Length > 0)
+							ExtractOrderInformation(serverMessage);
 					}
 				}
 			}
@@ -155,5 +163,30 @@ public class BuildPhone : MonoBehaviour
 		yield return new WaitForSeconds(5f);
 		orderButton.enabled = true;
 		orderButtonText.text = "Build 1 item";
+	}
+
+	private void ExtractOrderInformation(string serverMessage)
+	{
+		string[] targets = { "ONo=", "OPos=", "WPNo=", "PNo=", "StepNo=" };
+		int[] results = new int[targets.Length];
+		int startPoint;
+
+		for (int i = 0; i < targets.Length; i++)
+		{
+			startPoint = serverMessage.IndexOf(targets[i]);
+			subString = serverMessage.Substring(startPoint + targets[i].Length, serverMessage.Length - startPoint - targets[i].Length);
+			int result;
+			int.TryParse(subString.Split(';')[0], out result);
+			results[i] = result;
+		}
+
+		currentOrderNumber = results[0];
+		currentOrderPosition = results[1];
+		currentProductNumberOfOrderNumber = results[2];
+		currentOrderPartNumber = results[3];
+		currentStepNumber = results[4];
+
+		Debug.Log($"Order: {currentOrderNumber} has been created for part number {currentOrderPartNumber}." +
+			$" This order is in position {currentOrderPosition} and on step number {currentStepNumber}.");
 	}
 }
