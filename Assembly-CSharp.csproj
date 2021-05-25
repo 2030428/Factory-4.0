@@ -56,6 +56,8 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\JSON\cart.cs" />
+    <Compile Include="Assets\Scripts\JSON\tblStepJSON.cs" />
     <Compile Include="Assets\Scripts\EmergencyStopSubscribe.cs" />
     <Compile Include="Assets\Scripts\ShowObject.cs" />
     <Compile Include="Assets\Scripts\JSON\CurrentOrders.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="Assets\Scripts\OrderTracker.cs" />
     <Compile Include="Assets\Scripts\MeshRendererSwitch.cs" />
     <Compile Include="Assets\Scripts\RFIDReaderSubscribeMultiple.cs" />
+    <Compile Include="Assets\Scripts\JSON\cartJSON.cs" />
     <Compile Include="Assets\Scripts\EmergencyStopReader.cs" />
     <Compile Include="Assets\Scripts\ShowOrderBar.cs" />
     <Compile Include="Assets\Scripts\JSON\FinishedOrdersJSON.cs" />
@@ -78,13 +81,14 @@
     <Compile Include="Assets\Scripts\JSON\tblOrderPosJSON.cs" />
     <Compile Include="Assets\Scripts\RFIDReaderSubscribe.cs" />
     <Compile Include="Assets\Scripts\ScreenSwitcher.cs" />
+    <Compile Include="Assets\Scripts\JSON\tblStep.cs" />
     <Compile Include="Assets\Scripts\ConnectionChecker.cs" />
     <Compile Include="Assets\Scripts\AttemptConnect.cs" />
+    <Compile Include="Assets\Scripts\BuildOptionsButton.cs" />
     <Compile Include="Assets\Scripts\ARDisplayOrderTrack.cs" />
     <Compile Include="Assets\Scripts\BuildPhone.cs" />
     <Compile Include="Assets\Scripts\JSON\JsonHelper.cs" />
-    <Compile Include="Assets\Scripts\JSON\cartJSON.cs" />
-    <Compile Include="Assets\Scripts\JSON\cart.cs" />
+    <Compile Include="Assets\Scripts\JSON\tblStepMostRecent.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.base", "game4automation.base.csproj", "{D221DF51-FB8C-5F51-A5AD-0991B059423B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.opocua", "game4automation.interfaces.opocua.csproj", "{A0ACD8A9-B3B6-60A4-82A9-19439BF807C8}"
@@ -8,8 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Core", "NaughtyAttributes.Core.csproj", "{325564D0-3517-45C3-9827-4487761F0BCE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.cadlink", "game4automation.cadlink.csproj", "{154DA4E4-B19F-5299-8504-394C52FA49FE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game4automation.interfaces.plcsimadvanced", "game4automation.interfaces.plcsimadvanced.csproj", "{E06F425A-B377-8419-121B-7DF5DF00E5CE}"
 EndProject
@@ -49,6 +49,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D221DF51-FB8C-5F51-A5AD-0991B059423B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D221DF51-FB8C-5F51-A5AD-0991B059423B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D221DF51-FB8C-5F51-A5AD-0991B059423B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,10 +69,6 @@ Global
 		{154DA4E4-B19F-5299-8504-394C52FA49FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{154DA4E4-B19F-5299-8504-394C52FA49FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{154DA4E4-B19F-5299-8504-394C52FA49FE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B0BE554-4DFD-BCAC-C8C4-D3EB6F70C14A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E06F425A-B377-8419-121B-7DF5DF00E5CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E06F425A-B377-8419-121B-7DF5DF00E5CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E06F425A-B377-8419-121B-7DF5DF00E5CE}.Release|Any CPU.ActiveCfg = Release|Any CPU

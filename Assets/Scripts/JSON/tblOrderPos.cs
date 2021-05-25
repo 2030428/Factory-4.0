@@ -30,9 +30,9 @@ public class tblOrderPos: MonoBehaviour
 
         for (int i = 0; i < tblOrderPosObjectArray.Length; i++)
         {
-            Debug.Log("ONo:" + tblOrderPosObjectArray[i].ONo + ", Step No:" + tblOrderPosObjectArray[i].StepNo);
+            Debug.Log("ONo:" + tblOrderPosObjectArray[i].ONo + ", Step No:" + tblOrderPosObjectArray[i].StepNo ) ;
 
-            tblOrderPosData.Add("ONo:" + tblOrderPosObjectArray[i].ONo + ", Step No:" + tblOrderPosObjectArray[i].StepNo);
+            tblOrderPosData.Add("Order Number: " + tblOrderPosObjectArray[i].ONo + ", is at Step Number: " + tblOrderPosObjectArray[i].StepNo);
         }
 
         foreach (var listMember in tblOrderPosData)
@@ -51,14 +51,14 @@ public class tblOrderPos: MonoBehaviour
 
     public void GetRequestPublic()
     {
-        for (int i = 0; i < currentOrders.currentOrdersObjectArray.Length; i++)
-        {
-            var ONO = currentOrders.currentOrdersObjectArray[i].ONo;
+        //for (int i = 0; i < currentOrders.currentOrdersObjectArray.Length; i++)
+        //{
+        //    var ONO = currentOrders.currentOrdersObjectArray[i].ONo;
 
-            StartCoroutine(GetRequest(" http://172.21.0.90/SQLDataStudents.php?Command=tblStep?ONo=" + ONO));
-        }
+            StartCoroutine(GetRequest("http://172.21.0.90/SQLDataStudents.php?Command=tblOrderPos")) ; //" + ONO));
+        //}
 
-        //StartCoroutine(GetRequest(" http://172.21.0.90/SQLDataStudents.php?Command=tblStep?ONo=2579 "));
+        ////StartCoroutine(GetRequest(" http://172.21.0.90/SQLDataStudents.php?Command=tblStep?ONo=2579 "));
 
     }
 

@@ -34,11 +34,13 @@ public class BuildPhone : MonoBehaviour
 
 	#endregion
 
-	public OrderTracker orderTracker;
 	public ConnectionChecker connectionCheck;
+	public BuildOptionsButton buildOptionsButton;
+
 
 	public Button orderButton;
 	public Text orderButtonText;
+	public Text orderSubmitInfo;
 
 	private string subString;
 
@@ -52,13 +54,21 @@ public class BuildPhone : MonoBehaviour
 	void Start()
 	{
 		ConnectToTcpServer();
-		orderButtonText.text = "Build 1 item";
+		currentOrderNumber = 0;
 	}
 
-	/// <summary> 	
-	/// Setup socket connection. 	
-	/// </summary> 	
-	private void ConnectToTcpServer()
+    private void Update()
+    {
+		if (currentOrderNumber != 0)
+		{
+			orderSubmitInfo.text = ($"Your order has been acceped and is Order Number: {currentOrderNumber} which has been created for part number {currentOrderPartNumber}." +	$" This order is in position {currentOrderPosition} and on step number {currentStepNumber}.");
+		}
+	}
+
+    /// <summary> 	
+    /// Setup socket connection. 	
+    /// </summary> 	
+    private void ConnectToTcpServer()
 	{
 		try
 		{
@@ -145,13 +155,81 @@ public class BuildPhone : MonoBehaviour
 		if(!connectionCheck.allConnected)
         {
 			StartCoroutine(DisableOrderButton());
-			orderTracker.TrackBuild();
+			orderSubmitInfo.text = "Not currently connected to factory.";
 		}
 		else
         {
-			SendMessageToServer(newOrderMessage);
+			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=3003;#Aux1Int=1\r");
 			StartCoroutine(DisableOrderButton());
-			orderTracker.TrackBuild();
+			orderSubmitInfo.text = "";
+			buildOptionsButton.HideBar();
+
+		}
+	}
+
+	public void OrderFrontCover()
+	{
+		if (!connectionCheck.allConnected)
+		{
+			StartCoroutine(DisableOrderButton());
+			orderSubmitInfo.text = "Not currently connected to factory.";
+		}
+		else
+		{
+			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=210;#Aux1Int=1\r");
+			StartCoroutine(DisableOrderButton());
+			orderSubmitInfo.text = "";
+			buildOptionsButton.HideBar();
+
+		}
+	}
+
+	public void OrderFrontCoverWithFuses()
+	{
+		if (!connectionCheck.allConnected)
+		{
+			StartCoroutine(DisableOrderButton());
+			orderSubmitInfo.text = "Not currently connected to factory.";
+		}
+		else
+		{
+			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=214;#Aux1Int=1\r");
+			StartCoroutine(DisableOrderButton());
+			orderSubmitInfo.text = "";
+			buildOptionsButton.HideBar();
+
+		}
+	}
+
+	public void OrderFullCoverNoBoard()
+	{
+		if (!connectionCheck.allConnected)
+		{
+			StartCoroutine(DisableOrderButton());
+			orderSubmitInfo.text = "Not currently connected to factory.";
+		}
+		else
+		{
+			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=1200;#Aux1Int=1\r");
+			StartCoroutine(DisableOrderButton());
+			orderSubmitInfo.text = "";
+			buildOptionsButton.HideBar();
+		}
+	}
+
+	public void EmptyCaseDrilled()
+	{
+		if (!connectionCheck.allConnected)
+		{
+			StartCoroutine(DisableOrderButton());
+			orderSubmitInfo.text = "Not currently connected to factory.";
+		}
+		else
+		{
+			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=3002;#Aux1Int=1\r");
+			StartCoroutine(DisableOrderButton());
+			orderSubmitInfo.text = "";
+			buildOptionsButton.HideBar();
 		}
 	}
 
@@ -160,9 +238,10 @@ public class BuildPhone : MonoBehaviour
     {
 		orderButton.enabled = false;
 		orderButtonText.text = "Button disabled while attempting order...";
-		yield return new WaitForSeconds(5f);
+		yield return new WaitForSeconds(3f);
 		orderButton.enabled = true;
-		orderButtonText.text = "Build 1 item";
+		orderButtonText.text = "Build Options";
+
 	}
 
 	private void ExtractOrderInformation(string serverMessage)
@@ -186,7 +265,7 @@ public class BuildPhone : MonoBehaviour
 		currentOrderPartNumber = results[3];
 		currentStepNumber = results[4];
 
-		Debug.Log($"Order: {currentOrderNumber} has been created for part number {currentOrderPartNumber}." +
-			$" This order is in position {currentOrderPosition} and on step number {currentStepNumber}.");
+		Debug.LogError($"Order: {currentOrderNumber} has been created for part number {currentOrderPartNumber}." +
+			$" This order is in position {currentOrderPosition} and has been sent to step number {currentStepNumber}.");
 	}
 }

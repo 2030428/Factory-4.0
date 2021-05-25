@@ -5,42 +5,36 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 
-public class cart : MonoBehaviour
+public class tblStepMostRecent: MonoBehaviour
 {
     public CurrentOrders currentOrders;
 
-    public List<string> cartData = new List<string>();
+    public List<string> tblStepData = new List<string>();
 
     public string listInfo;
 
     public Text info;
 
-    public cartJSON[] cartArray;
+    public tblStepJSON[] tblStepObjectArray;
 
-    public void ReceieveData(string cartStringPHPMany)
+    public void ReceieveData(string tblStepStringPHPMany)
     {
-        string newcartStringPHPMany = fixJson(cartStringPHPMany);
+        string newtblStepStringPHPMany = fixJson(tblStepStringPHPMany);
 
-        Debug.Log(newcartStringPHPMany);
+        Debug.Log(newtblStepStringPHPMany);
 
-        cartArray = JsonHelper.FromJson<cartJSON>(newcartStringPHPMany);
+        tblStepObjectArray = JsonHelper.FromJson<tblStepJSON>(newtblStepStringPHPMany);
 
-        cartData.Clear();
+        tblStepData.Clear();
         listInfo = "";
 
-        for (int i = 0; i < cartArray.Length; i++)
+        for (int i = 0; i < tblStepObjectArray.Length; i++)
         {
-            Debug.Log("Order Number: " + cartArray[i].ONo + ", is on Cart Number: " + cartArray[i].CarrierID);
+            Debug.Log("Order Number: " + tblStepObjectArray[i].ONo + ", is at Resource: " + tblStepObjectArray[i].ResourceID + ", and Step Number: " + tblStepObjectArray[i].StepNo + "." + "The next Step Number is: " + tblStepObjectArray[i].NextStepNo + ", Planned Start Time:" + tblStepObjectArray[i].PlannedStart + ", Planned End Time:" + tblStepObjectArray[i].PlannedEnd + ", Description:" + tblStepObjectArray[i].Description);
 
-            cartData.Add("Order Number: " + cartArray[i].ONo + ", is on Cart Number: " + cartArray[i].CarrierID);
+            info.text = ("Order Number: " + tblStepObjectArray[i].ONo + ", is at Resource: " + tblStepObjectArray[i].ResourceID + ", and Step Number: " + tblStepObjectArray[i].StepNo + "." + "The next Step Number is: " + tblStepObjectArray[i].NextStepNo + ", Planned Start Time:" + tblStepObjectArray[i].PlannedStart + ", Planned End Time:" + tblStepObjectArray[i].PlannedEnd + ", Description:" + tblStepObjectArray[i].Description);
         }
 
-        foreach (var listMember in cartData)
-        {
-            listInfo += listMember.ToString() + "\n" + "\n";
-        }
-
-        info.text = listInfo;
     }
 
     string fixJson(string value)
@@ -55,7 +49,7 @@ public class cart : MonoBehaviour
         //{
         //    var ONO = currentOrders.currentOrdersObjectArray[i].ONo;
 
-        StartCoroutine(GetRequest("http://172.21.0.90/SQLData.php?Command=cart")); //" + ONO));
+            StartCoroutine(GetRequest("http://172.21.0.90/SQLDataStudents.php?Command=tblStep")) ; //" + ONO));
         //}
 
         ////StartCoroutine(GetRequest(" http://172.21.0.90/SQLDataStudents.php?Command=tblStep?ONo=2579 "));
@@ -91,4 +85,3 @@ public class cart : MonoBehaviour
         }
     }
 }
-

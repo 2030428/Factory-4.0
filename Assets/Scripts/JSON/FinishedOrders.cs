@@ -26,9 +26,9 @@ public class FinishedOrders: MonoBehaviour
 
         for (int i = 0; i < FinishedOrdersObjectArray.Length; i++)
         {
-            Debug.Log("ONo:" + FinishedOrdersObjectArray[i].ONo + ", Company:" + FinishedOrdersObjectArray[i].Company + ", Planned Start:" + FinishedOrdersObjectArray[i].PlannedStart + ", Planned End:" + FinishedOrdersObjectArray[i].PlannedEnd + ", State:" + FinishedOrdersObjectArray[i].State);
+            Debug.Log("ONo:" + FinishedOrdersObjectArray[i].FinONo + ", Company:" + FinishedOrdersObjectArray[i].Company + ", Planned Start:" + FinishedOrdersObjectArray[i].Start + ", Planned End:" + FinishedOrdersObjectArray[i].End + ", State:" + FinishedOrdersObjectArray[i].State);
             
-            FinishedOrderData.Add("ONo:" + FinishedOrdersObjectArray[i].ONo + ", Company:" + FinishedOrdersObjectArray[i].Company + ", Planned Start:" + FinishedOrdersObjectArray[i].PlannedStart + ", Planned End:" + FinishedOrdersObjectArray[i].PlannedEnd + ", State:" + FinishedOrdersObjectArray[i].State);
+            FinishedOrderData.Add("Order Number: " + FinishedOrdersObjectArray[i].FinONo + ", Company Name: " + FinishedOrdersObjectArray[i].Company + ", Planned Start Time: " + FinishedOrdersObjectArray[i].Start + ", Planned End Time: " + FinishedOrdersObjectArray[i].End + ", Build State: " + FinishedOrdersObjectArray[i].State);
         }
 
         foreach (var listMember in FinishedOrderData)
@@ -47,7 +47,7 @@ public class FinishedOrders: MonoBehaviour
 
     public void GetRequestPublic()
     {
-        StartCoroutine(GetRequest("http://172.21.0.90/SQLDataStudents.php?Command=finishedOrders"));
+        StartCoroutine(GetRequest("http://172.21.0.90/SQLData.php?Command=finishedOrders&numOrders=10"));
     }
 
     IEnumerator GetRequest(string uri)
