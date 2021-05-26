@@ -7,6 +7,8 @@ using System.Collections;
 // Access a website and use UnityWebRequest.Get to download a page.
 // Also try to download a non-existing page. Display the error.
 
+//*****REFER TO CURRENT ORDERS SCRIPT FOR FULL COMMENTS*****
+
 public class OrderOptions: MonoBehaviour
 { 
 
@@ -21,17 +23,11 @@ public class OrderOptions: MonoBehaviour
 
     public void ReceieveData(string OrderStringPHPMany)
     {
-
-        //OrderOptionJson orderOptionObject = JsonUtility.FromJson<OrderOptionJson>(OrderStringPHPSingle);
-        //Debug.Log("PNo:" + orderOptionObject.PNo + ", Description:" + orderOptionObject.Description);
-
         string newOrderStringPHPMany = fixJson(OrderStringPHPMany);
 
         Debug.Log(newOrderStringPHPMany);
 
         OrderOptionJson[] orderOptionObjectArray = JsonHelper.FromJson<OrderOptionJson>(newOrderStringPHPMany);
-        //Debug.Log("PNo:" + orderOptionObjectArray[0].PNo + ", Description:" + orderOptionObjectArray[0].Description);
-
 
 
         for (int i = 0; i < orderOptionObjectArray.Length; i++)

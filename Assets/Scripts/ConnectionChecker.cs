@@ -6,35 +6,24 @@ using game4automation;
 
 public class ConnectionChecker : MonoBehaviour
 {
-    public ConnectionChecker[] interfaces;
+    public OPCUA_Interface[] interfaces;                //ref for the array of interfaces
 
-    public bool connected, allConnected;
+    public bool connected, allConnected;                //creates bools
 
 
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i <interfaces.Length; i++)
+        for(int i = 0; i <interfaces.Length; i++)       //for each interface in the array...       
         {
-            if(interfaces[i].connected)
+            if(interfaces[i].IsConnected)               //if connected...
             {
-                allConnected = true;
+                allConnected = true;                    //set bool true
             }
-            else
+            else                                        //if not...
             {
-                allConnected = false;
+                allConnected = false;                   //set bool false
             }
         }
     }
-
-    public void Connected()
-    {
-        connected = true;
-    }
-
-    public void Disconeccted()
-    {
-        connected = false;
-    }
-
 }

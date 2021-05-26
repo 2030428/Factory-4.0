@@ -6,64 +6,64 @@ using UnityEngine.UI;
 
 public class ResetEmergencyStopSubscribe : MonoBehaviour
 {
-    public OPCUA_Interface Interface;
+    public OPCUA_Interface Interface;               //ref to interface script
 
-    public string info;
+    public string info;                             //creates string
 
-    public int machineNumber;
+    public int machineNumber;                       //creates int
+        
+    public bool needToReset;                        //creates bool
 
-    public bool needToReset;
-
-    private string active, inactive;
+    private string active, inactive;                //creates private string
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Interface.EventOnConnected.AddListener(OnConnected);
-        Interface.EventOnConnected.AddListener(OnDisconnected);
-        Interface.EventOnConnected.AddListener(OnReconnect);
+        Interface.EventOnConnected.AddListener(OnConnected);        //adds listener
+        Interface.EventOnConnected.AddListener(OnDisconnected);     // ""
+        Interface.EventOnConnected.AddListener(OnReconnect);        // ""
 
-        active = "False";
-        inactive = "True";
+        active = "False";                           //sets string valule
+        inactive = "True";                          // ""
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(info == active)
+        if(info == active)                          //if these values are equal...
         {
-            needToReset = false;
+            needToReset = false;                    //set bool false
         }
 
-        if(info == inactive)
+        if(info == inactive)                        //if these values are equal
         {
-            needToReset = true;
+            needToReset = true;                     //set this bool true
         }
     }
 
     private void OnConnected()
     {
-        Debug.Log("Connected");
-        var subscription = Interface.Subscribe("ns=3;s=\"dbOpPanel\".\"OpPanelBtn\".\"xReset\"", NodeChanged);
-        info = subscription.ToString();
+        //Debug.Log("Connected");                   //debug check
+        var subscription = Interface.Subscribe("ns=3;s=\"dbOpPanel\".\"OpPanelBtn\".\"xReset\"", NodeChanged);      //sets value to variable
+        info = subscription.ToString();             //sets string value to var value
     }
 
     private void OnDisconnected()
     {
-        Debug.Log("Disconnected");
+        //Debug.Log("Disconnected");                //debug check
     }
 
     private void OnReconnect()
     {
-        Debug.Log("Reconnecting");
+        //Debug.Log("Reconnecting");                //debug check
     }
 
     public void NodeChanged(OPCUANodeSubscription sub, object value)
     {        
-        info = value.ToString();
-        Debug.Log(sub.NodeId + " " + sub.StatusGood);        
+        info = value.ToString();                            //sets string value
+        //Debug.Log(sub.NodeId + " " + sub.StatusGood);     //debug check  
     }
 }
 

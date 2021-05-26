@@ -7,40 +7,38 @@ using System.Collections.Generic;
 
 public class cart : MonoBehaviour
 {
-    public CurrentOrders currentOrders;
+    public List<string> cartData = new List<string>();              //creates list
 
-    public List<string> cartData = new List<string>();
+    public string listInfo;                                         //creates string
 
-    public string listInfo;
+    public Text info;                                               //ref to text object
 
-    public Text info;
-
-    public cartJSON[] cartArray;
+    public cartJSON[] cartArray;                                    //array of cart jsons
 
     public void ReceieveData(string cartStringPHPMany)
     {
-        string newcartStringPHPMany = fixJson(cartStringPHPMany);
+        string newcartStringPHPMany = fixJson(cartStringPHPMany);           //new string with fixed json string
 
-        Debug.Log(newcartStringPHPMany);
+        //Debug.Log(newcartStringPHPMany);                                  //debug check
 
-        cartArray = JsonHelper.FromJson<cartJSON>(newcartStringPHPMany);
+        cartArray = JsonHelper.FromJson<cartJSON>(newcartStringPHPMany);    //array of fixed jsons strings
 
-        cartData.Clear();
-        listInfo = "";
+        cartData.Clear();                                                   //clears list data
+        listInfo = "";                                                      //empties string
 
-        for (int i = 0; i < cartArray.Length; i++)
+        for (int i = 0; i < cartArray.Length; i++)                          //for eachcartarray in length
         {
-            Debug.Log("Order Number: " + cartArray[i].ONo + ", is on Cart Number: " + cartArray[i].CarrierID);
+            //Debug.Log("Order Number: " + cartArray[i].ONo + ", is on Cart Number: " + cartArray[i].CarrierID);        //debug check
 
-            cartData.Add("Order Number: " + cartArray[i].ONo + ", is on Cart Number: " + cartArray[i].CarrierID);
+            cartData.Add("Order Number: " + cartArray[i].ONo + ", is on Cart Number: " + cartArray[i].CarrierID);       //adds each array value to the list
         }
 
-        foreach (var listMember in cartData)
+        foreach (var listMember in cartData)                                //for each element of the list
         {
-            listInfo += listMember.ToString() + "\n" + "\n";
+            listInfo += listMember.ToString() + "\n" + "\n";                //add it to string
         }
 
-        info.text = listInfo;
+        info.text = listInfo;                                               //set text value to string
     }
 
     string fixJson(string value)
@@ -51,15 +49,7 @@ public class cart : MonoBehaviour
 
     public void GetRequestPublic()
     {
-        //for (int i = 0; i < currentOrders.currentOrdersObjectArray.Length; i++)
-        //{
-        //    var ONO = currentOrders.currentOrdersObjectArray[i].ONo;
-
-        StartCoroutine(GetRequest("http://172.21.0.90/SQLData.php?Command=cart")); //" + ONO));
-        //}
-
-        ////StartCoroutine(GetRequest(" http://172.21.0.90/SQLDataStudents.php?Command=tblStep?ONo=2579 "));
-
+        StartCoroutine(GetRequest("http://172.21.0.90/SQLData.php?Command=cart"));      //calls coroutine and sets string
     }
 
     IEnumerator GetRequest(string uri)

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 
+//******REFER TO CURRENT ORDERS SCRIPT FOR FULL COMMMENTS****
+
 public class tblOrderPos: MonoBehaviour
 {
     public CurrentOrders currentOrders;

@@ -2,7 +2,7 @@ using System;
 [Serializable]
 public class cartJSON
 {
-    public int ONo;
-    public int CarrierID;
+    public int ONo;             //creates int
+    public int CarrierID;       // ""
 
 }

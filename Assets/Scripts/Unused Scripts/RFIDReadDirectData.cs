@@ -4,6 +4,8 @@ using UnityEngine;
 using game4automation;
 using UnityEngine.UI;
 
+//******SCRIPT NOT USED****
+
 public class RFIDReadDirectData : MonoBehaviour
 {
     public AttemptConnect tryToConnect;

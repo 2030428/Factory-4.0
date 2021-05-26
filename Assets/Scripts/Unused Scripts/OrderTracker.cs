@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//******SCRIPT NOT USED*****
+
 public class OrderTracker : MonoBehaviour
 {
     public RFIDReaderSubscribe[] RFIDData;

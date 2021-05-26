@@ -57,16 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\JSON\cart.cs" />
+    <Compile Include="Assets\Scripts\JSON\tblStepMostRecent.cs" />
     <Compile Include="Assets\Scripts\JSON\tblStepJSON.cs" />
     <Compile Include="Assets\Scripts\EmergencyStopSubscribe.cs" />
-    <Compile Include="Assets\Scripts\ShowObject.cs" />
     <Compile Include="Assets\Scripts\JSON\CurrentOrders.cs" />
     <Compile Include="Assets\Scripts\JSON\OrderOptions.cs" />
-    <Compile Include="Assets\Scripts\OrderTracker.cs" />
+    <Compile Include="Assets\Scripts\Unused Scripts\OrderTracker.cs" />
     <Compile Include="Assets\Scripts\MeshRendererSwitch.cs" />
-    <Compile Include="Assets\Scripts\RFIDReaderSubscribeMultiple.cs" />
+    <Compile Include="Assets\Scripts\Unused Scripts\RFIDReaderSubscribeMultiple.cs" />
     <Compile Include="Assets\Scripts\JSON\cartJSON.cs" />
-    <Compile Include="Assets\Scripts\EmergencyStopReader.cs" />
+    <Compile Include="Assets\Scripts\Unused Scripts\EmergencyStopReader.cs" />
     <Compile Include="Assets\Scripts\ShowOrderBar.cs" />
     <Compile Include="Assets\Scripts\JSON\FinishedOrdersJSON.cs" />
     <Compile Include="Assets\Scripts\ConnectionIndicator.cs" />
@@ -75,7 +75,7 @@
     <Compile Include="Assets\Scripts\JSON\OrderOptionJSON.cs" />
     <Compile Include="Assets\Scripts\JSON\CurrentOrdersJSON.cs" />
     <Compile Include="Assets\Scripts\ResetEmergencyStopSubscribe.cs" />
-    <Compile Include="Assets\Scripts\RFIDReadDirectData.cs" />
+    <Compile Include="Assets\Scripts\Unused Scripts\RFIDReadDirectData.cs" />
     <Compile Include="Assets\Scripts\JSON\json.cs" />
     <Compile Include="Assets\Scripts\JSON\tblOrderPos.cs" />
     <Compile Include="Assets\Scripts\JSON\tblOrderPosJSON.cs" />
@@ -88,7 +88,6 @@
     <Compile Include="Assets\Scripts\ARDisplayOrderTrack.cs" />
     <Compile Include="Assets\Scripts\BuildPhone.cs" />
     <Compile Include="Assets\Scripts\JSON\JsonHelper.cs" />
-    <Compile Include="Assets\Scripts\JSON\tblStepMostRecent.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

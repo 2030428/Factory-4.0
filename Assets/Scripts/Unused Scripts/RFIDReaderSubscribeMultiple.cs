@@ -4,6 +4,8 @@ using UnityEngine;
 using game4automation;
 using UnityEngine.UI;
 
+//*******SCRIPT NOT USED********
+
 public class RFIDReaderSubscribeMultiple : MonoBehaviour
 {
     public OPCUA_Interface Interface1, Interface2, Interface3, Interface4, Interface5, Interface6, Interface7, Interface8, Interface9;

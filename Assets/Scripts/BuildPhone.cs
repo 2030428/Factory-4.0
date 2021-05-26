@@ -34,13 +34,13 @@ public class BuildPhone : MonoBehaviour
 
 	#endregion
 
-	public ConnectionChecker connectionCheck;
-	public BuildOptionsButton buildOptionsButton;
+	public ConnectionChecker connectionCheck;			//ref to connection checker script
+	public BuildOptionsButton buildOptionsButton;		//ref to build toptions script
 
 
-	public Button orderButton;
-	public Text orderButtonText;
-	public Text orderSubmitInfo;
+	public Button orderButton;							//ref to button
+	public Text orderButtonText;						//ref to text object
+	public Text orderSubmitInfo;						// ""
 
 	private string subString;
 
@@ -59,10 +59,10 @@ public class BuildPhone : MonoBehaviour
 
     private void Update()
     {
-		if (currentOrderNumber != 0)
+		if (currentOrderNumber != 0)			//if order number is above 0.....
 		{
 			orderSubmitInfo.text = ($"Your order has been acceped and is Order Number: {currentOrderNumber} which has been created for part number {currentOrderPartNumber}." +	$" This order is in position {currentOrderPosition} and on step number {currentStepNumber}.");
-		}
+		}										//set text to this
 	}
 
     /// <summary> 	
@@ -152,14 +152,30 @@ public class BuildPhone : MonoBehaviour
 	/// <summary> 
 	public void OrderCompleteNewPhone()
 	{
-		if(!connectionCheck.allConnected)
+		if(!connectionCheck.allConnected)										//if this if this not true...
         {
-			StartCoroutine(DisableOrderButton());
-			orderSubmitInfo.text = "Not currently connected to factory.";
+			StartCoroutine(DisableOrderButton());								//start this coroutine
+			orderSubmitInfo.text = "Not currently connected to factory.";		//set text value to this
 		}
-		else
+		else																	//else....
         {
-			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=3003;#Aux1Int=1\r");
+			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=3003;#Aux1Int=1\r");		//send this message to server
+			StartCoroutine(DisableOrderButton());																//start this coroutine
+			orderSubmitInfo.text = "";																			//set text value to empty
+			buildOptionsButton.HideBar();																		//call this function from other script
+		}
+	}
+
+	public void OrderFrontCover()												//same as above function
+	{
+		if (!connectionCheck.allConnected)										
+		{
+			StartCoroutine(DisableOrderButton());
+			orderSubmitInfo.text = "Not currently connected to factory.";
+		}
+		else
+		{
+			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=210;#Aux1Int=1\r");			//sends different message to server
 			StartCoroutine(DisableOrderButton());
 			orderSubmitInfo.text = "";
 			buildOptionsButton.HideBar();
@@ -167,7 +183,7 @@ public class BuildPhone : MonoBehaviour
 		}
 	}
 
-	public void OrderFrontCover()
+	public void OrderFrontCoverWithFuses()										//same as above function
 	{
 		if (!connectionCheck.allConnected)
 		{
@@ -176,7 +192,7 @@ public class BuildPhone : MonoBehaviour
 		}
 		else
 		{
-			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=210;#Aux1Int=1\r");
+			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=214;#Aux1Int=1\r");			//sends different message to server
 			StartCoroutine(DisableOrderButton());
 			orderSubmitInfo.text = "";
 			buildOptionsButton.HideBar();
@@ -184,7 +200,7 @@ public class BuildPhone : MonoBehaviour
 		}
 	}
 
-	public void OrderFrontCoverWithFuses()
+	public void OrderFullCoverNoBoard()											//same as above function
 	{
 		if (!connectionCheck.allConnected)
 		{
@@ -193,15 +209,14 @@ public class BuildPhone : MonoBehaviour
 		}
 		else
 		{
-			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=214;#Aux1Int=1\r");
+			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=1200;#Aux1Int=1\r");		//sends different message to server
 			StartCoroutine(DisableOrderButton());
 			orderSubmitInfo.text = "";
 			buildOptionsButton.HideBar();
-
 		}
 	}
 
-	public void OrderFullCoverNoBoard()
+	public void EmptyCaseDrilled()                                              //same as above function
 	{
 		if (!connectionCheck.allConnected)
 		{
@@ -210,23 +225,7 @@ public class BuildPhone : MonoBehaviour
 		}
 		else
 		{
-			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=1200;#Aux1Int=1\r");
-			StartCoroutine(DisableOrderButton());
-			orderSubmitInfo.text = "";
-			buildOptionsButton.HideBar();
-		}
-	}
-
-	public void EmptyCaseDrilled()
-	{
-		if (!connectionCheck.allConnected)
-		{
-			StartCoroutine(DisableOrderButton());
-			orderSubmitInfo.text = "Not currently connected to factory.";
-		}
-		else
-		{
-			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=3002;#Aux1Int=1\r");
+			SendMessageToServer("444;RequestID=0;MClass=101;MNo=2;ErrorState=0;#PNo=3002;#Aux1Int=1\r");		//sends different message to server
 			StartCoroutine(DisableOrderButton());
 			orderSubmitInfo.text = "";
 			buildOptionsButton.HideBar();
@@ -236,11 +235,11 @@ public class BuildPhone : MonoBehaviour
 
 	IEnumerator DisableOrderButton()
     {
-		orderButton.enabled = false;
-		orderButtonText.text = "Button disabled while attempting order...";
-		yield return new WaitForSeconds(3f);
-		orderButton.enabled = true;
-		orderButtonText.text = "Build Options";
+		orderButton.enabled = false;													//disables button
+		orderButtonText.text = "Button disabled while attempting order...";				//sets button text value
+		yield return new WaitForSeconds(3f);											//waits 3 seconds
+		orderButton.enabled = true;														//enables button
+		orderButtonText.text = "Build Options";											//sets text value
 
 	}
 

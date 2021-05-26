@@ -5,31 +5,41 @@ using UnityEngine.UI;
 
 public class ScreenSwitcher : MonoBehaviour
 {
-    public MeshRendererSwitch MeshSwitch;
+    public BuildOptionsButton buildOptions;
 
-    public GameObject switchToAR, switchTo3D, ARCam, ThreeDCam;
+    public ShowOrderBar showOrderBar;
+    
+    public MeshRendererSwitch MeshSwitch;           //ref to meshrendswitch script
+
+    public GameObject switchToAR, switchTo3D, ARCam, ThreeDCam, areaTargets;     //refs to game objects
 
     // Start is called before the first frame update
     void Start()
     {
-        ARMode();
+        ARMode();                                   //calls this function at start
     }
 
     public void ARMode()
     {
-        ThreeDCam.SetActive(false);
-        ARCam.SetActive(true);
-        switchToAR.SetActive(false);
-        switchTo3D.SetActive(true);
-        MeshSwitch.TurnOffMeshes();
+        ThreeDCam.SetActive(false);                 //sets GO inactive
+        ARCam.SetActive(true);                      //sets GO active
+        switchToAR.SetActive(false);                //sets GO inactive
+        switchTo3D.SetActive(true);                 //sets GO ctive
+        areaTargets.SetActive(true);                // ""
+        MeshSwitch.TurnOffMeshes();                 //calls function from refernced script
+        showOrderBar.HideBars();                    // ""
+        buildOptions.HideBar();                     // ""
     }
 
-    public void ThreeDMode()
+    public void ThreeDMode()                        //same as above function but opposite
     {
         ARCam.SetActive(false);
         ThreeDCam.SetActive(true);
         switchToAR.SetActive(true);
         switchTo3D.SetActive(false);
+        areaTargets.SetActive(false);
         MeshSwitch.TurnOnMeshes();
+        showOrderBar.HideBars();                    
+        buildOptions.HideBar();                    
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 
+//****REFER TO CURRENT ORDERS SCRIPT FOR FULL COMMENTS*****
+
 public class FinishedOrders: MonoBehaviour
 {
     public List<string> FinishedOrderData = new List<string>();

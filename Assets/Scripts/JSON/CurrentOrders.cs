@@ -7,38 +7,40 @@ using System.Collections.Generic;
 
 public class CurrentOrders: MonoBehaviour
 {
-    public List<string> CurrentOrderData = new List<string>();
+    public List<string> CurrentOrderData = new List<string>();      //cretes list
 
-    public CurrentOrderJSON[] currentOrdersObjectArray;
+    public CurrentOrderJSON[] currentOrdersObjectArray;             //creates array of current ofrder jsons
 
-    public string listInfo;
+    public string listInfo;                                         //creates string
 
-    public Text info;
+    public Text info;                                               //ref to text object
 
     public void ReceieveData(string CurrentOrderStringPHPMany)
     {
-        string newCurrentOrderStringPHPMany = fixJson(CurrentOrderStringPHPMany);
+        string newCurrentOrderStringPHPMany = fixJson(CurrentOrderStringPHPMany);       //new string with fixed json string
 
-        Debug.Log(newCurrentOrderStringPHPMany);
+        //Debug.Log(newCurrentOrderStringPHPMany);                                      //debug check
 
-        currentOrdersObjectArray = JsonHelper.FromJson<CurrentOrderJSON>(newCurrentOrderStringPHPMany);
+        currentOrdersObjectArray = JsonHelper.FromJson<CurrentOrderJSON>(newCurrentOrderStringPHPMany);     //array of fixed json strings
 
-        CurrentOrderData.Clear();
-        listInfo = "";
+        CurrentOrderData.Clear();                                                       //clears list data
+        listInfo = "";                                                                  //empties string
 
-        for (int i = 0; i < currentOrdersObjectArray.Length; i++)
+        for (int i = 0; i < currentOrdersObjectArray.Length; i++)                       //for each item in array length
         {
-            Debug.Log("ONo:" + currentOrdersObjectArray[i].ONo + ", Company:" + currentOrdersObjectArray[i].Company + ", Planned Start:" + currentOrdersObjectArray[i].PlannedStart + ", Planned End:" + currentOrdersObjectArray[i].PlannedEnd + ", State:" + currentOrdersObjectArray[i].State);
+            //Debug.Log("ONo:" + currentOrdersObjectArray[i].ONo + ", Company:" + currentOrdersObjectArray[i].Company + ", Planned Start:" + currentOrdersObjectArray[i].PlannedStart + ", Planned End:" + currentOrdersObjectArray[i].PlannedEnd + ", State:" + currentOrdersObjectArray[i].State);
+            //debug check
 
             CurrentOrderData.Add("Order Number: " + currentOrdersObjectArray[i].ONo + ", Company Name: " + currentOrdersObjectArray[i].Company + ", Planned Start Time: " + currentOrdersObjectArray[i].PlannedStart + ", Planned End Time: " + currentOrdersObjectArray[i].PlannedEnd + ", Build State: " + currentOrdersObjectArray[i].State);
+            //adds array values to the list
         }
 
-        foreach(var listMember in CurrentOrderData)
+        foreach(var listMember in CurrentOrderData)                 //for each element of the list
         {
-            listInfo += listMember.ToString() + "\n" + "\n"; 
+            listInfo += listMember.ToString() + "\n" + "\n";        //add to the string
         }
 
-        info.text = listInfo;
+        info.text = listInfo;                                       //set text value to the string
     }
 
     string fixJson(string value)
@@ -49,7 +51,7 @@ public class CurrentOrders: MonoBehaviour
 
     public void GetRequestPublic()
     {
-        StartCoroutine(GetRequest("http://172.21.0.90/SQLData.php?Command=currentOrders"));
+        StartCoroutine(GetRequest("http://172.21.0.90/SQLData.php?Command=currentOrders"));     //calls coroutine and sets string
     }
 
     IEnumerator GetRequest(string uri)

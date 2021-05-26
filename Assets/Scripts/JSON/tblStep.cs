@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+//******* REFER TO CURRENT ORDERS SCRIPT FOR FULL COMMENTS******
 
 public class tblStep: MonoBehaviour
 {
