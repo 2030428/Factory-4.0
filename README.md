@@ -1,6 +1,6 @@
-# Factory-4.0
+# Industry-4.0
 
-AR application for Android Devices
+AR application development for Android Devices
 
 This application has been developed for use with Samsung Galaxy Tab S7+ along with Festo Factory Machines.
 
