@@ -2,6 +2,8 @@
 
 AR application development for Android Devices
 
+Unity version 2020.3.5f1
+
 This application has been developed for use with Samsung Galaxy Tab S7+ along with Festo Factory Machines.
 
 Key Features:
